@@ -1,0 +1,19 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <!-- <script src='../dist/oModel.min.js'></script> -->
+        <script src='../src/Model.js'></script>
+        <script>
+            var person = new Model({
+                name: 'oscar'
+            });
+            
+            person.onChange(function(){
+                console.log(person.toJSON());
+            })
+            
+            person.set('cat', 'lillie');
+        </script>
+    </body>
+</html>

@@ -1,34 +1,42 @@
-var Model = function(attributes) {
-	this.attributes = attributes;
-	this.callbacks = [];
-}
+(function(){
 
-Model.prototype.toJSON = function() {
-	return this.attributes;	
-}
+    var Model = function(attributes) {
+        this.attributes = attributes;
+        this._events = [];
+    }
 
-Model.prototype.set = function(key, value) {
-	if(typeof key == 'object') {
-		var object = key;
-		var attributes = this.attributes;
-		Object.keys(object).forEach(function (key) {
-			attributes[key] = object[key];
-		})
-	} else {
-		this.attributes[key] = value;
-	}
+    Model.prototype.toJSON = function() {
+        return this.attributes;
+    }
 
-	this.callbacks.forEach(function(callback) {
-		callback();
-	});
-}
+    Model.prototype.set = function(key, value) {
+        if(typeof key == 'object') {
+            var object = key;
+            var attributes = this.attributes;
+            Object.keys(object).forEach(function (key) {
+                attributes[key] = object[key];
+            })
+        } else {
+            this.attributes[key] = value;
+        }
 
-Model.prototype.update = Model.prototype.set;
+        this._events.forEach(function(callback) {
+            callback();
+        });
+    }
 
-Model.prototype.onChange = function(callback) {
-	if(this.callbacks.indexOf(callback)<0){
-		this.callbacks.push(callback);		
-	}
-}
+    Model.prototype.update = Model.prototype.set;
 
-module.exports = Model;
+    Model.prototype.onChange = function(callback) {
+        if(this._events.indexOf(callback)<0){
+            this._events.push(callback);
+        }
+    }
+
+    if(typeof module == 'undefined'){
+        this['Model'] = Model;
+    } else {
+        module.exports = Model;
+    }
+
+}).bind(this)();

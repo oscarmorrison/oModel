@@ -1,4 +1,4 @@
-var Model = require('./Model.js');
+var Model = require('../src/Model.js');
 
 var person = new Model({
 	name: 'oscar',
