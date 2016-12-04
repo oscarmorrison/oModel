@@ -2,22 +2,25 @@
   "name": "o-model",
   "version": "1.0.0",
   "description": "simplest model with listener",
-  "author": "Oscar Morrison",
-  "main": "dist/OModel.js",
+  "author": "",
+  "main": "dist/oModel.min.js",
   "directories": {
     "example": "example"
   },
   "scripts": {
+    "build": "./node_modules/uglify-js/bin/uglifyjs src/Model.js -o dist/oModel.min.js --source-map dist/oModel.min.js.map",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oscarmorrison/oModel.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/oscarmorrison/oModel/issues"
   },
-  "homepage": "https://github.com/oscarmorrison/oModel#readme"
+  "homepage": "https://github.com/oscarmorrison/oModel#readme",
+  "dependencies": {
+    "uglify-js": "^2.7.5"
+  }
 }
