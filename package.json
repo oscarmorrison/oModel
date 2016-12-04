@@ -1,0 +1,23 @@
+{
+  "name": "o-model",
+  "version": "1.0.0",
+  "description": "simplest model with listener",
+  "author": "Oscar Morrison",
+  "main": "dist/OModel.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oscarmorrison/oModel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oscarmorrison/oModel/issues"
+  },
+  "homepage": "https://github.com/oscarmorrison/oModel#readme"
+}
