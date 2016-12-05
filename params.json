@@ -1,0 +1,6 @@
+{
+  "name": "oModel",
+  "tagline": "Simplest JS Model with listeners",
+  "body": "# oModel\r\n\r\noModel is a work in progress, with no public release yet.\r\n\r\n## Goal  \r\nBuild a super simple js model that allows for onChange call backs.  \r\n\r\n### Insperation\r\n- [Backbone.Model](http://backbonejs.org) (Jeremy Ashkenas you're brilliant!)\r\n- [Mettle](https://github.com/jmoyers/mettle)\r\n\r\n## Docs\r\n\r\n**Create a new object** (without any attributes)\r\n```javascript\r\nvar person = new Model();\r\n\r\n```\r\nor with attributes / properties  \r\n```javascript\r\nvar person = new Model({\r\n    name: 'oscar'\r\n});\r\n```\r\n\r\n**Set / Update attributes**\r\n```javascript\r\nperson.set('age', 25);\r\nperson.update('name', 'george');\r\n```\r\n*update is an alias for set*  \r\n\r\n**Listen to objects**  \r\n```javascript\r\nvar callback = function(attributes) {\r\n    console.log(attributes);\r\n}\r\nperson.onChange(callback);\r\n```\r\n\r\n**OnChange**\r\n```javascript\r\nperson.update('name', 'edward');\r\n\r\n// callback log\r\n// {name: 'edward', age: 25}\r\n```\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>oModel by oscarmorrison</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>oModel</h1>
+        <p>Simplest JS Model with listeners</p>
+
+        <p class="view"><a href="https://github.com/oscarmorrison/oModel">View the Project on GitHub <small>oscarmorrison/oModel</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/oscarmorrison/oModel/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/oscarmorrison/oModel/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/oscarmorrison/oModel">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="omodel" class="anchor" href="#omodel" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>oModel</h1>
+
+<p>oModel is a work in progress, with no public release yet.</p>
+
+<h2>
+<a id="goal" class="anchor" href="#goal" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Goal</h2>
+
+<p>Build a super simple js model that allows for onChange call backs.  </p>
+
+<h3>
+<a id="insperation" class="anchor" href="#insperation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Insperation</h3>
+
+<ul>
+<li>
+<a href="http://backbonejs.org">Backbone.Model</a> (Jeremy Ashkenas you're brilliant!)</li>
+<li><a href="https://github.com/jmoyers/mettle">Mettle</a></li>
+</ul>
+
+<h2>
+<a id="docs" class="anchor" href="#docs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Docs</h2>
+
+<p><strong>Create a new object</strong> (without any attributes)</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> person <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Model</span>();
+</pre></div>
+
+<p>or with attributes / properties  </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> person <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Model</span>({
+    name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>oscar<span class="pl-pds">'</span></span>
+});</pre></div>
+
+<p><strong>Set / Update attributes</strong></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">person</span>.<span class="pl-c1">set</span>(<span class="pl-s"><span class="pl-pds">'</span>age<span class="pl-pds">'</span></span>, <span class="pl-c1">25</span>);
+<span class="pl-smi">person</span>.<span class="pl-en">update</span>(<span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>george<span class="pl-pds">'</span></span>);</pre></div>
+
+<p><em>update is an alias for set</em>  </p>
+
+<p><strong>Listen to objects</strong>  </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> <span class="pl-en">callback</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">attributes</span>) {
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(attributes);
+}
+<span class="pl-smi">person</span>.<span class="pl-c1">onChange</span>(callback);</pre></div>
+
+<p><strong>OnChange</strong></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">person</span>.<span class="pl-en">update</span>(<span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>edward<span class="pl-pds">'</span></span>);
+
+<span class="pl-c">// callback log</span>
+<span class="pl-c">// {name: 'edward', age: 25}</span></pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/oscarmorrison">oscarmorrison</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
