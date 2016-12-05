@@ -9,18 +9,26 @@
   },
   "scripts": {
     "build": "./node_modules/uglify-js/bin/uglifyjs src/Model.js -o dist/oModel.min.js --source-map dist/oModel.min.js.map",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose",
+    "test-watch": "jest --verbose --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oscarmorrison/oModel.git"
+  },
+  "jest": {
+    "testPathDirs": [
+      "<rootDir>/tests"
+    ]
   },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/oscarmorrison/oModel/issues"
   },
   "homepage": "https://github.com/oscarmorrison/oModel#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^17.0.3",
     "uglify-js": "^2.7.5"
   }
 }

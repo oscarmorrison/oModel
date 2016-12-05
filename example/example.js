@@ -19,3 +19,5 @@ person.update({
 })
 
 person.update('coffee', 'house')
+
+console.log(person.get('coffee'))

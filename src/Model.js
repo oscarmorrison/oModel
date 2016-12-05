@@ -1,7 +1,7 @@
 (function(){
 
     var Model = function(attributes) {
-        this.attributes = attributes;
+        this.attributes = attributes || {};
         this._events = [];
     }
 
@@ -26,6 +26,13 @@
     }
 
     Model.prototype.update = Model.prototype.set;
+
+    Model.prototype.get = function(key){
+        if(!key){
+            return this.attributes;
+        }
+        return this.attributes[key];
+    }
 
     Model.prototype.onChange = function(callback) {
         if(this._events.indexOf(callback)<0){
