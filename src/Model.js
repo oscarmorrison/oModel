@@ -20,9 +20,9 @@
             this.attributes[key] = value;
         }
 
-        this._events.forEach(function(callback) {
-            callback();
-        });
+        this._events.forEach((function(callback) {
+            callback(this.attributes);
+        }).bind(this));
     }
 
     Model.prototype.update = Model.prototype.set;
