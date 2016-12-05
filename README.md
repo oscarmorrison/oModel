@@ -9,14 +9,19 @@ Build a super simple js model that allows for onChange call backs.
 - [Backbone.Model](http://backbonejs.org) (Jeremy Ashkenas you're brilliant!)
 - [Mettle](https://github.com/jmoyers/mettle)
 
-## Docs
+## Installation
+*TBD bower and npm dependency*  
+- compatible as client or node dependancy
+
+
+## API Docs
 
 **Create a new model** (without any attributes)
 ```javascript
 var person = new Model();
 
 ```
-or with attributes / properties  
+**or with attributes / properties** 
 ```javascript
 var person = new Model({
     name: 'oscar'
@@ -26,7 +31,13 @@ var person = new Model({
 **Set / Update attributes**
 ```javascript
 person.set('age', 25);
-person.update('name', 'george');
+```
+**...or multiple at once**  
+```javascript
+person.update({
+    name: 'george',
+    age: 20
+});
 ```
 *update is an alias for set*  
 
@@ -43,5 +54,5 @@ person.onChange(callback);
 person.update('name', 'edward');
 
 // callback log
-// {name: 'edward', age: 25}
+// {name: 'edward', age: 20}
 ```
