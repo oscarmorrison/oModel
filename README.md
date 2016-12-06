@@ -55,4 +55,17 @@ person.update('name', 'edward');
 
 // callback log
 // {name: 'edward', age: 20}
+
 ```
+
+**Stop listening to models for callback**
+```javascript
+person.off(callback)
+```
+
+**Stop listening to models all**
+```javascript
+person.off()
+```
+
+

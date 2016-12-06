@@ -39,6 +39,14 @@
             this._events.push(callback);
         }
     }
+    
+    Model.prototype.off = function(callback) {
+        if(callback) {
+            this._events.splice(this._events.indexOf(callback), 1);
+        } else {
+            this._events = [];
+        }
+    }
 
     if(typeof module == 'undefined'){
         this['Model'] = Model;

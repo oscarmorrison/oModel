@@ -13,11 +13,17 @@ function callbackHello() {
 
 person.onChange(callbackHello);
 
+person.onChange(function(){
+	console.log('--- callback second');
+});
+
 person.update({
 	some: 'new',
 	stuff: 'awesome'
 })
 
+person.off(callbackHello)
+
 person.update('coffee', 'house')
 
-console.log(person.get('coffee'))
+console.log(person.get())
